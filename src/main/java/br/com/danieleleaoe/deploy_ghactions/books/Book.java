@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 
 import jakarta.persistence.Id;
 
-@Entity(name = "books")
+@Entity(name = "book")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
