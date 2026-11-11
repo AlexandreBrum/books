@@ -22,5 +22,7 @@ public class Book {
     private String code;
     private String description;
     private String name;
+    private String author;
+    private String publisher;
 
 }
