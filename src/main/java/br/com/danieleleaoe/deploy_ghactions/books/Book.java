@@ -24,6 +24,7 @@ public class Book {
     private String name;
     private String author;
     private String publisher;
+    private String obs;
 
 	public UUID getId() {
 		return id;
@@ -67,6 +68,14 @@ public class Book {
 	
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
+	}
+
+	public String getObs() {
+		return obs;
+	}
+
+	public void setObs(String obs) {
+		this.obs = obs;
 	}
 
 }
