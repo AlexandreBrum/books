@@ -1,10 +1,12 @@
 package br.com.danieleleaoe.deploy_ghactions.books;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.UUID;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,7 +27,8 @@ public class Book {
     private String name;
     private String author;
     private String publisher;
-    private LocalDate publish;
+    @Temporal(TemporalType.DATE)
+    private Date publish;
     
 	public UUID getId() {
 		return id;
@@ -71,11 +74,11 @@ public class Book {
 		this.publisher = publisher;
 	}
 
-	public LocalDate getPublish() {
+	public Date getPublish() {
 		return publish;
 	}
 
-	public void setPublish(LocalDate publish) {
+	public void setPublish(Date publish) {
 		this.publish = publish;
 	}
 
