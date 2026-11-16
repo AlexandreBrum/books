@@ -7,7 +7,6 @@ CREATE TABLE IF NOT EXISTS book (
     description VARCHAR(50) NOT NULL,
     name VARCHAR(40) NOT NULL,
     author VARCHAR(40) NOT NULL,
-    publisher VARCHAR(40) NOT NULL,
-    year INTEGER NOT NULL
+    publisher VARCHAR(40) NOT NULL
 
 );
