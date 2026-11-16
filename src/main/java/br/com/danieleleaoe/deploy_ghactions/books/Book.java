@@ -24,7 +24,6 @@ public class Book {
     private String name;
     private String author;
     private String publisher;
-    private String note;
 
 	public UUID getId() {
 		return id;
@@ -68,14 +67,6 @@ public class Book {
 	
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
-	}
-
-	public String getNote() {
-		return note;
-	}
-
-	public void setNote(String note) {
-		this.note = note;
 	}
 
 }
