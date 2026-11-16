@@ -21,17 +21,17 @@ jobs:
             - name: Login Docker Hub
               run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
             - name: Build docker image
-              run: docker build -t danieleleaoe/deploy_ghactions .
+              run: docker build -t AlexandreBrum/deploy_ghactions .
             - name: Push image docker
-              run: docker push danieleleaoe/deploy_ghactions
+              run: docker push AlexandreBrum/deploy_ghactions
               
     deploy:
         needs: build
         runs-on: self-hosted
         steps:
             - name: Pull image from docker hub
-              run: docker pull danieleleaoe/deploy_ghactions:latest
+              run: docker pull AlexandreBrum/deploy_ghactions:latest
             - name: Remove docker container
               run: docker rm -f deploy_ghactions
             - name: Run docker container
-              run: docker run -d -p 8080:8080 -e DATABASE_USERNAME=${{secrets.DATABASE_USERNAME}} -e DATABASE_PASSWORD='${{secrets.DATABASE_PASSWORD}}' -e DATABASE_URL=${{secrets.DATABASE_URL}} --name deploy_ghactions danieleleaoe/deploy_ghactions
+              run: docker run -d -p 8080:8080 -e DATABASE_USERNAME=${{secrets.DATABASE_USERNAME}} -e DATABASE_PASSWORD='${{secrets.DATABASE_PASSWORD}}' -e DATABASE_URL=${{secrets.DATABASE_URL}} --name deploy_ghactions AlexandreBrum/deploy_ghactions
