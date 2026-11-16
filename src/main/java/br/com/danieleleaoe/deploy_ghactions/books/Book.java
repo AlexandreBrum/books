@@ -1,5 +1,6 @@
 package br.com.danieleleaoe.deploy_ghactions.books;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 import jakarta.persistence.Entity;
@@ -24,6 +25,7 @@ public class Book {
     private String name;
     private String author;
     private String publisher;
+    private LocalDate publish;
     
 	public UUID getId() {
 		return id;
@@ -67,6 +69,14 @@ public class Book {
 	
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
+	}
+
+	public LocalDate getPublish() {
+		return publish;
+	}
+
+	public void setPublish(LocalDate publish) {
+		this.publish = publish;
 	}
 
 }
