@@ -21,17 +21,17 @@ jobs:
             - name: Login Docker Hub
               run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
             - name: Build docker image
-              run: docker build -t alexandrebrum/books .
+              run: docker build -t alexandrebrumgh/books .
             - name: Push image docker
-              run: docker push alexandrebrum/books
+              run: docker push alexandrebrumgh/books
               
     deploy:
         needs: build
         runs-on: self-hosted
         steps:
             - name: Pull image from docker hub
-              run: docker pull alexandrebrum/books:latest
+              run: docker pull alexandrebrumgh/books:latest
             - name: Remove docker container
               run: docker rm -f deploy_ghactions
             - name: Run docker container
-              run: docker run -d -p 8080:8080 --name deploy_ghactions alexandrebrum/books
+              run: docker run -d -p 8080:8080 --name deploy_ghactions alexandrebrumgh/books
